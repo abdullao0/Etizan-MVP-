@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتزان | Etizan - المنصة التفاعلية لتعليم الكيمياء في المدارس السعودية</title>
+    <meta name="description"
+        content="إتزان هي منصة تعليمية مبتكرة تحول مفاهيم الكيمياء المجردة إلى تجارب تفاعلية بصرية، مصممة خصيصاً للمنهج السعودي لتوفير مختبرات افتراضية آمنة للطلاب والمعلمين.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Almarai:wght@300;400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div id="bg-canvas"></div>
+
+    <nav class="glass-nav">
+        <div class="logo">
+            <span class="icon-atom">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="8" fill="url(#logo-grad)" />
+                    <ellipse cx="50" cy="50" rx="45" ry="18" stroke="url(#logo-grad)" stroke-width="2"
+                        transform="rotate(0 50 50)" opacity="0.8" />
+                    <ellipse cx="50" cy="50" rx="45" ry="18" stroke="url(#logo-grad)" stroke-width="2"
+                        transform="rotate(60 50 50)" opacity="0.6" />
+                    <ellipse cx="50" cy="50" rx="45" ry="18" stroke="url(#logo-grad)" stroke-width="2"
+                        transform="rotate(-60 50 50)" opacity="0.6" />
+                    <circle cx="95" cy="50" r="3" fill="var(--primary)" transform="rotate(0 50 50)" />
+                    <circle cx="95" cy="50" r="3" fill="var(--accent-soft-purple)" transform="rotate(60 50 50)" />
+                    <circle cx="95" cy="50" r="3" fill="var(--accent-soft-rose)" transform="rotate(-60 50 50)" />
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="var(--primary)" />
+                            <stop offset="1" stop-color="var(--accent)" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </span>
+            <h1>إتزان <span>Etizan</span></h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">عن المنصة</a></li>
+            <li><a href="#features">المميزات</a></li>
+            <li><a href="#vision">رؤيتنا</a></li>
+        </ul>
+        <button class="btn-primary">ابدأ الآن</button>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2 class="badge">نحو تعليم كيميائي تفاعلي</h2>
+                <h1>حوّل المفاهيم <span>المجردة</span> إلى تجارب بصرية مذهلة</h1>
+                <p>إتزان هي منصة تعليمية رائدة تهدف لتطوير طرق تعلم الكيمياء في المدارس السعودية، من خلال محاكاة
+                    التفاعلات والقوانين العلمية في مختبر افتراضي متكامل.</p>
+                <div class="hero-btns">
+                    <button class="btn-main">ابدأ التعلم <i data-lucide="sparkles"></i></button>
+                    <button class="btn-secondary">عن المنهج السعودي <i data-lucide="book-open"></i></button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="atom-container">
+                    <div class="nucleus"></div>
+                    <div class="orbit orbit-1">
+                        <div class="electron"></div>
+                    </div>
+                    <div class="orbit orbit-2">
+                        <div class="electron"></div>
+                    </div>
+                    <div class="orbit orbit-3">
+                        <div class="electron"></div>
+                    </div>
+                    <div class="glow-bg"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="section-title">
+                <h2>لماذا إتزان؟</h2>
+                <p>سد الفجوة بين النظرية والتطبيق في تعليم العلوم</p>
+            </div>
+            <div class="about-grid grid">
+                <div class="about-card">
+                    <div class="card-icon"><i data-lucide="eye"></i></div>
+                    <h3>تجسيد المجرد</h3>
+                    <p>الكثير من المفاهيم الكيميائية مثل التفاعلات الجزيئية لا يمكن رؤيتها بالعين. إتزان تجعلها مرئية
+                        ومفهومة.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon"><i data-lucide="shield-check"></i></div>
+                    <h3>مختبر آمن وعالمي</h3>
+                    <p>تجاوز عوائق نقص المعامل المدرسية بمختبر افتراضي آمن تماماً، يمكن الوصول إليه من أي جهاز وفي أي
+                        وقت.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon"><i data-lucide="layout-grid"></i></div>
+                    <h3>منهجي ومتكامل</h3>
+                    <p>كل محاكاة مرتبطة مباشرة بدرس محدد في المنهج السعودي، مما يسهل على المعلم دمجها في الحصة الدراسية.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i data-lucide="sliders"></i></div>
+                <h3>تحكم كامل بالمتغيرات</h3>
+                <p>تلاعب بالحرارة، التركيز، والضغط وشاهد كيف يتغير التفاعل فورياً أمام عينيك.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i data-lucide="refresh-cw"></i></div>
+                <h3>تحديث ديناميكي للمعادلات</h3>
+                <p>شاهد المعادلات الكيميائية تتحدث وتتوازن تلقائياً أثناء تغييرك للظروف المحيطة.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i data-lucide="users"></i></div>
+                <h3>دعم متكامل للمعلمين</h3>
+                <p>أدوات لتقديم الدروس، مهام تطبيقية، ودعم للطلاب الذين يواجهون صعوبات في فهم بعض المواضيع.</p>
+            </div>
+        </section>
+
+        <!-- Lab section removed -->
+
+        <section id="vision" class="vision-section">
+            <div class="vision-container">
+                <h2>رؤيتنا المستقبلية</h2>
+                <p>نطمح لأن تصبح "إتزان" المنصة الرقمية الشاملة لجميع العلوم، بدءاً من الكيمياء ووصولاً إلى الفيزياء
+                    والأحياء، لخلق جيل مبدع ومتمكن علمياً.</p>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="glass-footer">
+        <p>جميع الحقوق محفوظة &copy; 2026 إتزان (Etizan)</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section, .about-card, .feature-card').forEach(el => {
+            el.classList.add('reveal');
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
