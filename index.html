@@ -50,7 +50,7 @@
             <li><a href="#features">المميزات</a></li>
             <li><a href="#vision">رؤيتنا</a></li>
         </ul>
-        <button class="btn-primary">ابدأ الآن</button>
+        <a href="#beta" class="btn-primary">انضم للنسخة التجريبية</a>
     </nav>
 
     <main>
@@ -134,6 +134,44 @@
                 <h2>رؤيتنا المستقبلية</h2>
                 <p>نطمح لأن تصبح "إتزان" المنصة الرقمية الشاملة لجميع العلوم، بدءاً من الكيمياء ووصولاً إلى الفيزياء
                     والأحياء، لخلق جيل مبدع ومتمكن علمياً.</p>
+            </div>
+        </section>
+
+        <section id="beta" class="beta-section">
+            <div class="beta-container">
+                <div class="beta-content">
+                    <h2>كن جزءاً من المستقبل</h2>
+                    <p>انضم إلى قائمة الانتظار لتكون من أوائل الذين سيختبرون منصة "إتزان" عند الإطلاق الرسمي.</p>
+                    <ul class="beta-benefits">
+                        <li><i data-lucide="check-circle"></i> وصول مبكر للميزات الحصرية</li>
+                        <li><i data-lucide="check-circle"></i> فرصة لتقديم الملحوظات والتطوير</li>
+                        <li><i data-lucide="check-circle"></i> خصم خاص بعد انتهاء الفترة التجريبية</li>
+                    </ul>
+                </div>
+                <form class="beta-form glass-form" id="beta-signup-form" action="https://formspree.io/f/xaqdypgr"
+                    method="POST">
+                    <div class="form-group">
+                        <label for="name">الاسم الثلاثي</label>
+                        <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">الفئة</label>
+                        <select id="role" name="role">
+                            <option value="student">طالب / طالبة</option>
+                            <option value="teacher">معلم / معلمة</option>
+                            <option value="parent">ولي أمر</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        تسجيل الاهتمام <i data-lucide="send"></i>
+                    </button>
+                    <p class="form-footer">سنقوم بإشعارك فور جاهزية المنصة.</p>
+                </form>
             </div>
         </section>
     </main>

@@ -106,3 +106,46 @@ window.addEventListener('resize', () => {
 
 // JavaScript logic for three.js and basic interactivity remains.
 
+// Beta Form Submission
+document.getElementById('beta-signup-form')?.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.btn-submit');
+    const originalText = btn.innerHTML;
+
+    // Change button state to loading
+    btn.innerHTML = 'جاري الإرسال... <i data-lucide="loader"></i>';
+    btn.disabled = true;
+    lucide.createIcons();
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            btn.innerHTML = 'تم تسجيل اهتمامك بنجاح! <i data-lucide="check-circle"></i>';
+            btn.style.background = 'linear-gradient(45deg, #2ecc71, #27ae60)';
+            form.reset();
+        } else {
+            throw new Error('فشل الإرسال');
+        }
+    } catch (error) {
+        btn.innerHTML = 'حدث خطأ، يرجى المحاولة لاحقاً <i data-lucide="alert-circle"></i>';
+        btn.style.background = 'linear-gradient(45deg, #e74c3c, #c0392b)';
+    } finally {
+        lucide.createIcons();
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+            lucide.createIcons();
+        }, 5000);
+    }
+});
