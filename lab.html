@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المختبر الافتراضي | إتزان</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Almarai:wght@300;400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div id="bg-canvas"></div>
+
+    <nav class="glass-nav">
+        <div class="logo">
+            <span class="icon-atom">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="8" fill="url(#logo-grad)" />
+                    <ellipse cx="50" cy="50" rx="45" ry="18" stroke="url(#logo-grad)" stroke-width="2"
+                        transform="rotate(0 50 50)" opacity="0.8" />
+                    <ellipse cx="50" cy="50" rx="45" ry="18" stroke="url(#logo-grad)" stroke-width="2"
+                        transform="rotate(60 50 50)" opacity="0.6" />
+                    <ellipse cx="50" cy="50" rx="45" ry="18" stroke="url(#logo-grad)" stroke-width="2"
+                        transform="rotate(-60 50 50)" opacity="0.6" />
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="var(--primary)" />
+                            <stop offset="1" stop-color="var(--accent)" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </span>
+            <h1 onclick="window.location.href='index.html'">إتزان <span>Etizan</span></h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">الرئيسية</a></li>
+            <li><a href="index.html#about">عن المنصة</a></li>
+        </ul>
+        <a href="index.html#beta" class="btn-primary" style="text-decoration: none;">انضم للنسخة التجريبية</a>
+    </nav>
+
+    <main>
+        <section class="sim-section">
+            <div class="sim-header reveal">
+                <h2 class="badge">المختبر الافتراضي</h2>
+                <h1>استكشف عالم الكيمياء التفاعلي</h1>
+                <p>اختر إحدى المحاكيات المتاحة لبدء التجربة التعليمية.</p>
+            </div>
+
+            <!-- Lab Dashboard -->
+            <div class="lab-dashboard reveal">
+                <div class="lab-card">
+                    <span class="status-badge">متاح الآن</span>
+                    <i data-lucide="layers"></i>
+                    <h3>حالات المادة</h3>
+                    <p>استكشف كيف تتغير ترتيب وحركة الجزيئات بين الحالة الصلبة والسائلة والغازية.</p>
+                    <a href="matter-sim.html" class="btn-main"
+                        style="width: 100%; text-decoration: none; justify-content: center;">دخول المحاكاة <i
+                            data-lucide="arrow-left-circle"></i></a>
+                </div>
+
+                <div class="lab-card disabled">
+                    <span class="status-badge">قريباً</span>
+                    <i data-lucide="test-tube-2"></i>
+                    <h3>التفاعلات الكيميائية</h3>
+                    <p>تعلم كيفية موازنة المعادلات الكيميائية وملاحظة تفاعلات الإحلال والاحتراق.</p>
+                    <button class="btn-secondary" style="width: 100%;" disabled>غير متاح</button>
+                </div>
+
+                <div class="lab-card disabled">
+                    <span class="status-badge">قريباً</span>
+                    <i data-lucide="grid"></i>
+                    <h3>الجدول الدوري</h3>
+                    <p>رحلة تفاعلية لاستكشاف خصائص العناصر الموزعة في الجدول الدوري الحديث.</p>
+                    <button class="btn-secondary" style="width: 100%;" disabled>غير متاح</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <p>جميع الحقوق محفوظة &copy; 2026 إتزان (Etizan)</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        lucide.createIcons();
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('reveal-visible');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
